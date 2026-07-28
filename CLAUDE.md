@@ -113,3 +113,7 @@ docs: update README setup instructions
 3. Do not commit secrets, credentials, or `.env` files.
 4. Test changes locally before opening a pull request.
 5. Update documentation when behavior or setup steps change.
+
+
+
+Always write reusable React components.
