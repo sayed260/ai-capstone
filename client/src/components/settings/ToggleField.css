@@ -1,0 +1,98 @@
+.toggle-field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 0;
+}
+
+.toggle-field__text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.toggle-field__label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.toggle-field__description {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: #6b7280;
+}
+
+.toggle-field__switch {
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+  width: 2.75rem;
+  height: 1.5rem;
+}
+
+.toggle-field__input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.toggle-field__input:disabled {
+  cursor: not-allowed;
+}
+
+.toggle-field__track {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #d1d5db;
+  border-radius: 9999px;
+  transition: background-color 0.2s ease;
+}
+
+.toggle-field__track::after {
+  content: '';
+  position: absolute;
+  top: 0.125rem;
+  left: 0.125rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease;
+}
+
+.toggle-field__input:checked + .toggle-field__track {
+  background-color: #4f46e5;
+}
+
+.toggle-field__input:checked + .toggle-field__track::after {
+  transform: translateX(1.25rem);
+}
+
+.toggle-field__input:focus-visible + .toggle-field__track {
+  outline: 2px solid #4f46e5;
+  outline-offset: 2px;
+}
+
+.toggle-field__input:disabled + .toggle-field__track {
+  opacity: 0.5;
+}
+
+.toggle-field__error {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: #dc2626;
+}
+
+@media (max-width: 480px) {
+  .toggle-field {
+    align-items: flex-start;
+  }
+}
